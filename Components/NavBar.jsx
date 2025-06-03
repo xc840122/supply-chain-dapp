@@ -19,6 +19,17 @@ function NavBar() {
 		};
 	}, []);
 
+	// useEffect(() => {
+	// 	const handleClick = (e) => {
+	// 		if (!e.target.closest('.menu-btn')) setState(false);
+	// 	};
+	// 	document.addEventListener('click', handleClick);
+
+	// 	return () => {
+	// 		document.removeEventListener('click', handleClick);
+	// 	};
+	// }, []);
+
 	return (
 		<nav
 			className={`bg-white pb-5 md:text-sm ${
