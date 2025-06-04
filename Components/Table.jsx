@@ -1,4 +1,4 @@
-export default ({ setCreateShipmentModel, allShipmentData }) => {
+export default ({ setCreateShipmentModel, allShipments }) => {
 	const convertTime = (time) => {
 		const date = new Date(time);
 		return date.toLocaleString('en-NZ', {
@@ -11,7 +11,7 @@ export default ({ setCreateShipmentModel, allShipmentData }) => {
 		});
 	};
 
-	console.log('All Shipment Data:', allShipmentData);
+	console.log('All Shipment Data:', allShipments);
 
 	return (
 		<div className='max-w-screen-xl mx-auto px-4 md:px-8'>
@@ -65,7 +65,7 @@ export default ({ setCreateShipmentModel, allShipmentData }) => {
 					</tr>
 				</thead>
 				<tbody className='bg-white divide-y divide-gray-200'>
-					{allShipmentData?.map((shipment, index) => (
+					{allShipments?.map((shipment, index) => (
 						<tr key={index}>
 							<td className='px-6 py-4 whitespace-nowrap'>
 								{shipment.sender.slice(0, 15)}...
@@ -79,9 +79,7 @@ export default ({ setCreateShipmentModel, allShipmentData }) => {
 							<td className='px-6 py-4 whitespace-nowrap'>
 								{shipment.distance} km
 							</td>
-							<td className='px-6 py-4 whitespace-nowrap'>
-								${shipment.price.toFixed(2)}
-							</td>
+							<td className='px-6 py-4 whitespace-nowrap'>${shipment.price}</td>
 							<td className='px-6 py-4 whitespace-nowrap'>
 								{convertTime(shipment.deliveryTime)}
 							</td>
@@ -91,14 +89,18 @@ export default ({ setCreateShipmentModel, allShipmentData }) => {
 							<td className='px-6 py-4 whitespace-nowrap'>
 								<span
 									className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-										shipment.status === 'DELIVERED'
+										shipment.status === 2
 											? 'bg-green-100 text-green-800'
-											: shipment.status === 'IN_TRANSIT'
+											: shipment.status === 1
 											? 'bg-yellow-100 text-yellow-800'
 											: 'bg-red-100 text-red-800'
 									}`}
 								>
-									{shipment.status}
+									{shipment.status === 2
+										? 'Delivered'
+										: shipment.status === 1
+										? 'In Transit'
+										: 'Pending'}
 								</span>
 							</td>
 							{/* <td className='px-6 py-4 whitespace-nowrap'>

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { TrackingContext } from '@/Context/Tracking';
+import { TrackingContext } from '@/Context/TrackingContext';
 import { Nav1, Nav2, Nav3 } from '@/Components/index';
 
 function NavBar() {

@@ -31,9 +31,9 @@ export const TrackingProvider = ({ children }) => {
         receiver,
         new Date(pickupTime).getTime(),
         distance,
-        ethers.utils.parseEther(price, 18),
+        ethers.utils.parseUnits(price, 18),
         {
-          value: ethers.utils.parseEther(price, 18),
+          value: ethers.utils.parseUnits(price, 18),
         }
       );
       await createItem.wait();
@@ -47,7 +47,13 @@ export const TrackingProvider = ({ children }) => {
     try {
       const provider = new ethers.providers.JsonRpcProvider();
       const contract = fetchContract(provider);
+      // const web3Modal = new Web3Modal();
+      // const connection = await web3Modal.connect();
+      // const provider = new ethers.providers.Web3Provider(connection);
+      // const contract = fetchContract(provider);
+
       const shipments = await contract.getAllShipments();
+      console.log('Shipments fetched successfully:', shipments);
       const allShipments = shipments.map((shipment) => ({
         sender: shipment.sender,
         receiver: shipment.receiver,

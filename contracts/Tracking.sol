@@ -172,7 +172,7 @@ contract Tracking {
     /// @param _sender The address of the shipment sender.
     /// @param _index Index of the shipment in the sender's list.
     /// @return All key fields of the shipment struct.
-    function getShipmentCount(address _sender, uint256 _index) 
+    function getShipment(address _sender, uint256 _index) 
         public 
         view 
         returns (
@@ -208,7 +208,7 @@ contract Tracking {
 
     /// @notice Returns all shipments stored in the global array.
     /// @return An array of TypeShipment structs.
-    function getAllTranscations() public view returns (TypeShipment[] memory) {
+    function getAllShipments() public view returns (TypeShipment[] memory) {
         return typeShipments;
     }
 }

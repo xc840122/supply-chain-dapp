@@ -8,7 +8,7 @@ import {
   CompleteShipment,
   StartShipment,
 } from '@/Components/index';
-import { TrackingContext } from '@/Context/Tracking';
+import { TrackingContext } from '@/Context/TrackingContext';
 
 export default function index() {
   const {
@@ -29,14 +29,25 @@ export default function index() {
   // Data state
   const [allShipments, setAllShipments] = useState();
 
-  useEffect(() => {
-    const getCampaignData = getAllShipments();
+  // useEffect(() => {
+  //   const getCampaignData = getAllShipments();
 
-    return async () => {
-      const allData = await getCampaignData;
-      setAllShipments(allData);
+  //   return async () => {
+  //     const allData = await getCampaignData;
+  //     setAllShipments(allData);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const fetchShipments = async () => {
+      const allData = await getAllShipments();
+      setAllShipments(allData || []);
     };
+
+    fetchShipments();
+
   }, []);
+
 
   return (
     <>
