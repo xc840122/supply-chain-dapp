@@ -11,6 +11,8 @@ export default ({ setCreateShipmentModel, allShipmentData }) => {
 		});
 	};
 
+	console.log('All Shipment Data:', allShipmentData);
+
 	return (
 		<div className='max-w-screen-xl mx-auto px-4 md:px-8'>
 			<div className='items-start justify-between md:flex'>

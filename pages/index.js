@@ -7,7 +7,7 @@ import {
   GetShipment,
   CompleteShipment,
   StartShipment,
-} from '@/Components'
+} from '@/Components/index';
 import { TrackingContext } from '@/Context/Tracking';
 
 export default function index() {
