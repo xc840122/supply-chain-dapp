@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Str1 from '@/Components/SVG/Str1';
 
 function CompleteShipment({
 	completeModel,
@@ -26,7 +27,7 @@ function CompleteShipment({
 							className='text-gray-500 hover:text-gray-700 p-2 rounded-md'
 							onClick={() => setCompleteModel(false)}
 						>
-							X
+							<Str1 />
 						</button>
 					</div>
 					<div className='max-w-sm mx-auto py-3 space-y-3 text-center'>

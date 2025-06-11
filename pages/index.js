@@ -19,6 +19,7 @@ export default function index() {
     completeShipment,
     startShipment,
     getShipmentCount,
+    getBalance,
   } = useContext(TrackingContext);
 
   const [createShipmentModel, setCreateShipmentModel] = useState(false);
@@ -56,6 +57,7 @@ export default function index() {
         setStartModel={setStartModel}
         setCompleteModel={setCompleteModel}
         setGetModel={setGetModel}
+
       />
       <Table
         setCreateShipmentModel={setCreateShipmentModel}
@@ -71,6 +73,7 @@ export default function index() {
         setOpenProfile={setOpenProfile}
         currentAccount={currentAccount}
         getShipmentCount={getShipmentCount}
+        getBalance={getBalance}
       />
       <CompleteShipment
         completeModel={completeModel}

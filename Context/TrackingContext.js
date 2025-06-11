@@ -240,6 +240,20 @@ export const TrackingProvider = ({ children }) => {
     }
   };
 
+  // Get balance function
+  const getBalance = async (address) => {
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const balance = await provider.getBalance(address);
+      return ethers.utils.formatEther(balance); // 返回 ETH 单位字符串
+    } catch (error) {
+      console.error('Error getting balance:', error);
+      return '0';
+    }
+  };
+
+
+
   useEffect(() => {
     checkIfWalletConnected();
   }, []);
@@ -257,6 +271,7 @@ export const TrackingProvider = ({ children }) => {
         getShipmentCount,
         DappName,
         currentAccount,
+        getBalance,
       }}>
       {children}
     </TrackingContext.Provider>
