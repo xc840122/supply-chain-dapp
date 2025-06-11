@@ -25,7 +25,7 @@ export default function index() {
   const [openProfile, setOpenProfile] = useState(false);
   const [startModel, setStartModel] = useState(false);
   const [completeModel, setCompleteModel] = useState(false);
-  const [getShipmentModel, setGetShipmentModel] = useState(false);
+  const [getModel, setGetModel] = useState(false);
   // Data state
   const [allShipments, setAllShipments] = useState();
 
@@ -55,7 +55,7 @@ export default function index() {
         setOpenProfile={setOpenProfile}
         setStartModel={setStartModel}
         setCompleteModel={setCompleteModel}
-        setGetShipmentModel={setGetShipmentModel}
+        setGetModel={setGetModel}
       />
       <Table
         setCreateShipmentModel={setCreateShipmentModel}
@@ -78,8 +78,8 @@ export default function index() {
         completeShipment={completeShipment}
       />
       <GetShipment
-        getShipmentModel={getShipmentModel}
-        setGetShipmentModel={setGetShipmentModel}
+        getModel={getModel}
+        setGetModel={setGetModel}
         getShipment={getShipment}
       />
       <StartShipment

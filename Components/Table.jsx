@@ -1,4 +1,4 @@
-export default ({ setCreateShipmentModel, allShipments }) => {
+const Table = ({ setCreateShipmentModel, allShipments }) => {
 	const convertTime = (time) => {
 		const date = new Date(time);
 		return date.toLocaleString('en-NZ', {
@@ -118,3 +118,5 @@ export default ({ setCreateShipmentModel, allShipments }) => {
 		</div>
 	);
 };
+
+export default Table;

@@ -1,4 +1,4 @@
-export default function ServiceGrid({
+export default function Services({
 	setOpenProfile,
 	setCompleteModel,
 	setGetModel,

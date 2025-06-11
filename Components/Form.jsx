@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
-export default ({
+const Form = ({
 	setCreateShipmentModel,
 	createShipmentModel,
 	createShipment,
@@ -123,3 +123,5 @@ export default ({
 		)
 	);
 };
+
+export default Form;

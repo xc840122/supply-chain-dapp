@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { convert_time } from '@/utils/time';
-import { Str1 } from '@/Components/SVG/Str1';
+import Str1 from '@/Components/SVG/Str1';
 
-export default ({ getModel, setGetModel, getShipment }) => {
+const GetShipment = ({ getModel, setGetModel, getShipment }) => {
 	const [index, setIndex] = useState(0);
 	const [singleShipmentData, setSingleShipmentData] = useState();
 
@@ -11,6 +11,9 @@ export default ({ getModel, setGetModel, getShipment }) => {
 		if (shipmentData) {
 			setSingleShipmentData(shipmentData);
 			console.log(shipmentData);
+		} else {
+			setSingleShipmentData(null);
+			console.error('No shipment found for the given index');
 		}
 	};
 
@@ -92,3 +95,5 @@ export default ({ getModel, setGetModel, getShipment }) => {
 		</div>
 	) : null;
 };
+
+export default GetShipment;
