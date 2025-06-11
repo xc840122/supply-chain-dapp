@@ -32,7 +32,12 @@ function StartShipment({ startModel, setStartModel, startShipment }) {
 							Enter the receiver's name and index to start the shipment
 						</h4>
 
-						<form onSubmit={(e) => e.preventDefault()}>
+						<form
+							onSubmit={(e) => {
+								e.preventDefault();
+								setStartModel(false);
+							}}
+						>
 							<div className='relative mt-3'>
 								<input
 									type='text'
@@ -63,7 +68,6 @@ function StartShipment({ startModel, setStartModel, startShipment }) {
 							<button
 								className='w-full px-4 py-2 mt-4 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500'
 								onClick={() => startShipping()}
-								type='submit'
 							>
 								Start Shipment
 							</button>
