@@ -10,7 +10,7 @@ function NavBar() {
 		{ title: 'Home', path: '#' },
 		{ title: 'Services', path: '#' },
 		{ title: 'Contact Us', path: '#' },
-		{ title: 'Erc20', path: '#' },
+		{ title: 'About', path: '#' },
 	];
 
 	useEffect(() => {
@@ -40,14 +40,22 @@ function NavBar() {
 		>
 			<div className='gap-x-14 items-center max-w-screen-xl mx-auto px-4 md:flex md:px-8'>
 				<div className='flex items-center justify-between py-5 md:block'>
-					<a href='javascript:void(0)'>
-						<img
-							src='https://www.floatui.com/logo.svg'
-							width={120}
-							height={50}
-							alt='Logo'
-						/>
+					<a
+						className='flex items-center gap-3 text-gray-900 hover:text-indigo-600 font-extrabold text-xl md:text-2xl transition-colors duration-300 select-none cursor-pointer'
+						href='javascript:void(0)'
+						aria-label='Safe Delivery Home'
+					>
+						<div className='relative w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-300'>
+							<img
+								src='https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/72x72/1f69a.png'
+								alt='Cute Delivery Truck'
+								className='w-7 h-7 object-contain'
+								draggable={false}
+							/>
+						</div>
+						<h1 className='whitespace-nowrap tracking-wide'>Safe Delivery</h1>
 					</a>
+
 					<div className='md:hidden'>
 						<button
 							className='menu-btn text-gray-500 hover:text-gray-800'
