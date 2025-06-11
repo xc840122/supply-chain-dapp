@@ -81,7 +81,12 @@ const GetShipment = ({ getModel, setGetModel, getShipment }) => {
 									<strong>Price:</strong> {singleShipmentData.price} ETH
 								</p>
 								<p className='text-sm text-gray-600'>
-									<strong>Status:</strong> {singleShipmentData.status}
+									<strong>Status:</strong>{' '}
+									{singleShipmentData.status === 2
+										? 'Delivered'
+										: singleShipmentData.status === 1
+										? 'In Transit'
+										: 'Pending'}
 								</p>
 								<p className='text-sm text-gray-600'>
 									<strong>Paid:</strong>{' '}

@@ -11,7 +11,7 @@ const Table = ({ setCreateShipmentModel, allShipments }) => {
 		});
 	};
 
-	console.log('All Shipment Data:', allShipments);
+	// console.log('All Shipment Data:', allShipments);
 
 	return (
 		<div className='max-w-screen-xl mx-auto px-4 md:px-8'>
