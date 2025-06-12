@@ -1,15 +1,17 @@
+import { convert_time } from '@/utils/time';
+
 const Table = ({ setCreateShipmentModel, allShipments }) => {
-	const convertTime = (time) => {
-		const date = new Date(time);
-		return date.toLocaleString('en-NZ', {
-			year: 'numeric',
-			month: '2-digit',
-			day: '2-digit',
-			hour: '2-digit',
-			minute: '2-digit',
-			second: '2-digit',
-		});
-	};
+	// const convertTime = (time) => {
+	// 	const date = new Date(time);
+	// 	return date.toLocaleString('en-NZ', {
+	// 		year: 'numeric',
+	// 		month: '2-digit',
+	// 		day: '2-digit',
+	// 		hour: '2-digit',
+	// 		minute: '2-digit',
+	// 		second: '2-digit',
+	// 	});
+	// };
 
 	// console.log('All Shipment Data:', allShipments);
 
@@ -53,9 +55,9 @@ const Table = ({ setCreateShipmentModel, allShipments }) => {
 						<th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
 							Price
 						</th>
-						<th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
+						{/* <th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
 							Delivery Time
-						</th>
+						</th> */}
 						<th className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'>
 							Paid
 						</th>
@@ -74,15 +76,17 @@ const Table = ({ setCreateShipmentModel, allShipments }) => {
 								{shipment.receiver.slice(0, 15)}...
 							</td>
 							<td className='px-6 py-4 whitespace-nowrap'>
-								{convertTime(shipment.pickupTime)}
+								{convert_time(shipment.pickupTime)}
 							</td>
 							<td className='px-6 py-4 whitespace-nowrap'>
 								{shipment.distance} km
 							</td>
 							<td className='px-6 py-4 whitespace-nowrap'>${shipment.price}</td>
-							<td className='px-6 py-4 whitespace-nowrap'>
-								{convertTime(shipment.deliveryTime)}
-							</td>
+							{/* <td className='px-6 py-4 whitespace-nowrap'>
+								{shipment.deliveryTime === 0
+									? 'Not Scheduled'
+									: convert_time(shipment.deliveryTime)}
+							</td> */}
 							<td className='px-6 py-4 whitespace-nowrap'>
 								{shipment.isPaid ? 'Yes' : 'No'}
 							</td>

@@ -27,6 +27,10 @@ export const TrackingProvider = ({ children }) => {
       const provider = new ethers.providers.Web3Provider(connection);
       const signer = provider.getSigner();
       const contract = fetchContract(signer);
+
+      // Mitigate the time issue between js and solidity
+      const pickupTimeInSeconds = Math.floor(new Date(pickupTime).getTime() / 1000);
+
       const createItem = await contract.createShipment(
         receiver,
         new Date(pickupTime).getTime(),
