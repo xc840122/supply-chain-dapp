@@ -15,12 +15,7 @@ A decentralized application (DAPP) prototype for improving supply chain transpar
 
 ### Prerequisites
 
-Please make sure the following tools are installed before continuing:
-
-- [Node.js](https://nodejs.org/) (>=16.x)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [MetaMask browser extension](https://metamask.io/)
-- [Hardhat](https://hardhat.org/) (installed via `npm`)
+Please make sure the following versions of tools are installed exactly as "package.json" to ensure compatibility.
 
 ### Installation
 
