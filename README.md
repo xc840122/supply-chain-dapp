@@ -1,40 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Smart Chain DAPP
 
-## Getting Started
+A decentralized application (DAPP) prototype for improving supply chain transparency and traceability using Ethereum smart contracts and a modern web UI.
 
-First, run the development server:
+## Project Structure
+
+- `contracts/`: Solidity smart contracts
+- `pages/`: Next.js pages
+- `Components/`, `Context/`: React components and context management
+- `scripts/`: Hardhat deployment scripts
+- `test/`: Hardhat test cases
+- `public/`, `styles/`: Static assets and Tailwind CSS styling
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+Please make sure the following tools are installed before continuing:
+
+- [Node.js](https://nodejs.org/) (>=16.x)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [MetaMask browser extension](https://metamask.io/)
+- [Hardhat](https://hardhat.org/) (installed via `npm`)
+
+---
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/xc840122/supply-chain-dapp.git
+cd supply-chain-dapp
+
+# Install all dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+````
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Deploy Smart Contracts Locally
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+# Start local Hardhat blockchain
+npx hardhat node
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In a separate terminal:
 
-## Learn More
+```bash
+# Deploy contracts to the local Hardhat network
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-To learn more about Next.js, take a look at the following resources:
+After deployment, save the contract address if needed for frontend integration.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Launch the Web Frontend
 
-## Deploy on Vercel
+```bash
+# Start Next.js development server
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Then visit: [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## MetaMask Setup (Browser)
+
+To interact with the DApp, you **must install and configure MetaMask**:
+
+1. Install the [MetaMask browser extension](https://metamask.io/)
+
+2. Click the MetaMask icon and **create or import a wallet**
+
+3. Click the network selector (top center) and choose `Localhost 8545`
+
+   - If not visible, manually add it:
+
+     - **Network Name:** Hardhat Localhost
+     - **New RPC URL:** `http://127.0.0.1:8545`
+     - **Chain ID:** `31337`
+
+4. Import one of the test accounts provided by the Hardhat node:
+
+   - Use any private key shown in the terminal where `npx hardhat node` is running.
+
+---
+
+## Tech Stack
+
+- Smart Contracts: **Solidity + Hardhat**
+- Web Frontend: **React + Next.js + TailwindCSS**
+- Web3 Integration: **ethers.js + Web3Modal**
+- Styling: **Tailwind CSS**
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) 2025 Peter
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+````
